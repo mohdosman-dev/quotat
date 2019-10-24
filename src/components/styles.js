@@ -1,16 +1,21 @@
 import { StyleSheet } from 'react-native';
-import * as colors from './common/Colors';
+import Colors from './common/Colors';
 
 export default Styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: 10,
-        alignContent: 'stretch',
+        alignContent: 'center',
         alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomColor: Colors.primaryLightColor,
+        borderBottomWidth: 2,
+        borderBottomEndRadius: 1,
+        borderBottomStartRadius: 1,
     },
     sectionIcon: {
-        width: 32,
-        height: 32,
+        width: 40,
+        height: 40,
     },
     sectionText: {
         textAlign: 'center',
