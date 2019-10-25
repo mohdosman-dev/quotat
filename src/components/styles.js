@@ -21,6 +21,25 @@ export default Styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         fontFamily: "Times New Roman",
+    },
+
+    // Quote style
+    quoteStyle: {
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight: '200',
+        fontStyle: 'italic',
+        textShadowColor: Colors.grey_5,
+        textShadowRadius: 1
+    },
+    // Author
+    authorImage: {
+        width: 60,
+        height: 60,
+        borderColor: 1,
+        borderRadius: 50,
+        marginVertical: 5,
+        overflow: 'hidden'
     }
     
 });

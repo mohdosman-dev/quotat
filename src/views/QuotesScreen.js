@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
-import { ScrollView, Text } from 'react-native';
+import React, {Component} from 'react';
+import {ScrollView, Text, View} from 'react-native';
 
-import Toolbar from '../components/common/Toobar'
+import Colors from '../components/common/Colors';
+import QuoteList from '../components/QuoteList';
 
-import Styles from './styles'
+import Styles from './styles';
 
 export default class Quotes extends Component {
-    constructor(probs) {
+  static navigationOptions = {
+    title: 'All Quotes',
+  };
 
-    }
-
-    componentWillMount() {
-
-    }
-
-    render() {
-        return (
-            <ScrollView style={Styles.container}>
-                <Toolbar title="All Quotes" navigate={this.props.navigation} />
-                <Text>All Quotes</Text>
-            </ScrollView>
-        );
-    }
+  render() {
+    return (
+      <ScrollView style={Styles.container}>
+        <QuoteList />
+      </ScrollView>
+    );
+  }
 }

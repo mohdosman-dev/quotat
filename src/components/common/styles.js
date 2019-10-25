@@ -28,5 +28,41 @@ export default Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-end',
         flex: 1
+    },
+
+    // Card Styles
+    cardContainer: {
+        borderLeftWidth: 1,
+        borderRadius: 7,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 2,
+        marginHorizontal: 16,
+        marginTop: 10,
+        backgroundColor: Colors.white,
+        padding: 8,
+    },
+    cardSectionContainer: {
+        borderBottomWidth: 0,
+        backgroundColor: Colors.white,
+        justifyContent: 'center',
+        flexDirection: 'column',
+        borderColor: '#ddd',
+        padding: 8,
+        alignItems: 'center'
+    },
+
+
+    // Seprator Style
+    sepratorStyle: {
+        backgroundColor: '#263238',
+        width: '50%',
+        height: 1,
+        alignSelf: 'center',
+        marginVertical: 3
     }
 })
