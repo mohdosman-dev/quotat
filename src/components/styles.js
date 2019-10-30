@@ -24,10 +24,10 @@ export default Styles = StyleSheet.create({
     },
 
     // Quote style
-    quoteStyle: {
+    quoteTextStyle: {
         textAlign: 'center',
         fontSize: 16,
-        fontWeight: '200',
+        fontWeight: '100',
         fontStyle: 'italic',
         textShadowColor: Colors.grey_5,
         textShadowRadius: 1
@@ -40,6 +40,12 @@ export default Styles = StyleSheet.create({
         borderRadius: 50,
         marginVertical: 5,
         overflow: 'hidden'
+    },
+    authorName: {
+        textAlign: 'center',
+        fontSize: 13,
+        color: '#4f5b62',
+        fontStyle: 'normal'
     }
     
 });

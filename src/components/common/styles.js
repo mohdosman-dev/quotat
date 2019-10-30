@@ -63,6 +63,7 @@ export default Styles = StyleSheet.create({
         width: '50%',
         height: 1,
         alignSelf: 'center',
-        marginVertical: 3
+        marginVertical: 3,
+        opacity: 0.2
     }
 })

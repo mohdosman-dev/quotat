@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, FlatList} from 'react-native';
 
 import QuoteDetail from './QuoteDetail'
 
@@ -105,16 +105,23 @@ class QuoteList extends Component {
     },
   ];
 
-  renderQuotes() {
-    return this.quotes.map(quote => 
-        <QuoteDetail key={quote.id} quote={quote} />
-    );
+  renderQuotes(quote) {
+    return <QuoteDetail quote={quote}/>
+  }
+
+  onPress(quote) {
+    console.log(quote.id);
+    
   }
 
   render() {
     return (
       <View>
-        {this.renderQuotes()}
+        <FlatList 
+          data={this.quotes}
+          renderItem={this.renderQuotes}
+          keyExtractor={(quote) => quote.id}
+        />
       </View>
     );
   }

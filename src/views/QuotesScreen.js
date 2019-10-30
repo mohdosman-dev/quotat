@@ -13,9 +13,9 @@ export default class Quotes extends Component {
 
   render() {
     return (
-      <ScrollView style={Styles.container}>
+      <View style={Styles.container}>
         <QuoteList />
-      </ScrollView>
+      </View>
     );
   }
 }

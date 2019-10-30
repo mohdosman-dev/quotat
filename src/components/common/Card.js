@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import {View} from 'react-native';
 
+import Ripple from 'react-native-material-ripple'
+
 import Styles from './styles';
 
 const Card = (props) => {
-    console.log('Card loaded');
     return(
-        <View style={Styles.cardContainer}>
+        <Ripple style={Styles.cardContainer}
+            onPress={props.onPress}
+        >
             {props.children}
-        </View>
+        </Ripple>
     );
 };
 
