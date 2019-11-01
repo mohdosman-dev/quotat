@@ -1,5 +1,11 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
+import {
+  ApolloClient,
+  ApolloProvider,
+  HttpLink,
+  InMemoryCache,
+} from '@apollo/client';
 
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -11,7 +17,6 @@ import AuthorScreen from './src/views/AuthorScreen';
 import AuthorsScreen from './src/views/AuthorsScreen';
 import FavouritesScreen from './src/views/FavouritesScreen';
 
-import Colrs from './src/components/common/Colors';
 import Colors from './src/components/common/Colors';
 
 const AppNavigator = createStackNavigator(
@@ -36,17 +41,25 @@ const AppNavigator = createStackNavigator(
     },
   },
 );
+const client = new ApolloClient({
+  link: new HttpLink({
+    uri: 'http://192.168.43.29:4000',
+  }),
+  cache: new InMemoryCache(),
+});
 
 const AppContainer = createAppContainer(AppNavigator);
 
 const App = () => {
   return (
     <>
-      <StatusBar
-        backgroundColor={Colors.primaryDarkColor}
-        barStyle="light-content"
-      />
-      <AppContainer />
+      <ApolloProvider client={client}>
+        <StatusBar
+          backgroundColor={Colors.primaryDarkColor}
+          barStyle="light-content"
+        />
+        <AppContainer />
+      </ApolloProvider>
     </>
   );
 };
