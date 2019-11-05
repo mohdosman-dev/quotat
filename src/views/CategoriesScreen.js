@@ -3,16 +3,14 @@ import {ScrollView, Text, View} from 'react-native';
 
 import Styles from './styles';
 
-export default class CategoriesScreen extends Component {
+class CategoriesScreen extends Component {
   static navigationOptions = {
     title: 'Categories',
   };
 
   render() {
-    return (
-      <View>
-
-      </View>
-    );
+    return <View></View>;
   }
 }
+
+export {CategoriesScreen};

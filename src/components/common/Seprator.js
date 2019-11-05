@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
-import { View } from 'react-native';
+import React, {Component} from 'react';
+import {View} from 'react-native';
 
-import Styles from './styles'
+import Styles from './styles';
 
 const Seprator = () => {
-    return (
-        <View style={Styles.sepratorStyle} />
-    );
-}
+  return <View style={Styles.sepratorStyle} />;
+};
 
-export default Seprator;
+export {Seprator};

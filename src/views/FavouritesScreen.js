@@ -3,16 +3,14 @@ import {ScrollView, Text, View} from 'react-native';
 
 import Styles from './styles';
 
-export default class FavuoritesScreen extends Component {
+class FavouritesScreen extends Component {
   static navigationOptions = {
     title: 'Favuorites',
   };
 
   render() {
-    return (
-      <View>
-
-      </View>
-    );
+    return <View></View>;
   }
 }
+
+export {FavouritesScreen};

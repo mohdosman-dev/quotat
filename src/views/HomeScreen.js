@@ -6,9 +6,9 @@ import Toolbar from '../components/common/Toobar';
 
 import Styles from './styles';
 
-import Colors from '../components/common/Colors'
+import Colors from '../components/common/Colors';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
   onActionSelected(pos) {
     if (pos === 0) {
       console.log('Share selected');
@@ -20,9 +20,8 @@ export default class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Home',
   };
-  
+
   render() {
-    
     return (
       <View style={Styles.container}>
         {/* <Toolbar title="Quotat"/> */}
@@ -50,3 +49,5 @@ export default class HomeScreen extends Component {
     );
   }
 }
+
+export {HomeScreen};

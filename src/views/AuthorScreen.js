@@ -3,16 +3,14 @@ import {ScrollView, Text, View} from 'react-native';
 
 import Styles from './styles';
 
-export default class AuthorScreen extends Component {
+class AuthorScreen extends Component {
   static navigationOptions = {
     title: 'AuthorName',
   };
 
   render() {
-    return (
-      <View>
-
-      </View>
-    );
+    return <View></View>;
   }
 }
+
+export {AuthorScreen};

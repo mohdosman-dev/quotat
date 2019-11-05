@@ -1,23 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableNativeFeedback,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, Image} from 'react-native';
 
-import Ripple from 'react-native-material-ripple';
-
-import Card from './common/Card';
-import CardSection from './common/CardSection';
-import Seprator from './common/Seprator';
+import {Card, CardSection, Seprator} from './common';
 
 import Styles from './styles';
-import Colors from './common/Colors';
 
 const QuoteDetail = props => {
-  const {quote, navigation} = props;
+  const {quote} = props;
 
   return (
     <Card onPress={() => console.log(quote.item.id)}>

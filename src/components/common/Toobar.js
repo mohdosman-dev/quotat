@@ -30,4 +30,4 @@ const Toolbar = props => {
     </View>
   );
 };
-export default Toolbar;
+export {Toolbar};

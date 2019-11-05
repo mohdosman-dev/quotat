@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {
   ApolloClient,
   ApolloProvider,
@@ -7,17 +7,43 @@ import {
   InMemoryCache,
 } from '@apollo/client';
 
-import {createAppContainer} from 'react-navigation';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import HomeScreen from './src/views/HomeSreen';
-import QuotesScreen from './src/views/QuotesScreen';
-import CategoriesScreen from './src/views/CategoriesScreen';
-import AuthorScreen from './src/views/AuthorScreen';
-import AuthorsScreen from './src/views/AuthorsScreen';
-import FavouritesScreen from './src/views/FavouritesScreen';
+import {
+  SplashScreen,
+  LoginScreen,
+  SignupScreen,
+  HomeScreen,
+  QuotesScreen,
+  CategoriesScreen,
+  AuthorScreen,
+  AuthorsScreen,
+  FavouritesScreen,
+} from './src/views';
 
 import Colors from './src/components/common/Colors';
+
+const defaultNavigationOptions = {
+  headerStyle: {
+    backgroundColor: Colors.primaryColor,
+  },
+  headerTintColor: Colors.white,
+  headerTitleStyle: {
+    fontWeight: 'normal',
+  },
+};
+
+const AuthNavigator = createStackNavigator(
+  {
+    Login: {screen: LoginScreen},
+    Signup: {screen: SignupScreen},
+  },
+  {
+    initialRouteName: 'Login',
+    defaultNavigationOptions: defaultNavigationOptions,
+  },
+);
 
 const AppNavigator = createStackNavigator(
   {
@@ -30,15 +56,7 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: Colors.primaryColor,
-      },
-      headerTintColor: Colors.white,
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    },
+    defaultNavigationOptions: defaultNavigationOptions,
   },
 );
 const client = new ApolloClient({
@@ -48,7 +66,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(
+  createSwitchNavigator(
+    {
+      Splash: SplashScreen,
+      Auth: AuthNavigator,
+      App: AppNavigator,
+    },
+    {
+      initialRouteName: 'Auth',
+      defaultNavigationOptions: {
+        header: null,
+      },
+    },
+  ),
+);
 
 const App = () => {
   return (

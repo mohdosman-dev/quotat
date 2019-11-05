@@ -1,6 +1,6 @@
-import React, {Component, useState} from 'react';
-import {View, FlatList} from 'react-native';
-import {useQuery, gql} from '@apollo/client';
+import React, {useState} from 'react';
+import {View} from 'react-native';
+import {useQuery} from '@apollo/client';
 import {GET_QUOTES} from './graphql';
 import QuoteDetail from './QuoteDetail';
 
@@ -15,24 +15,10 @@ const QuoteList = () => {
   if (error) {
     console.log(error);
   }
-  function renderQuotes(quote) {
-    return <QuoteDetail quote={quote} />;
-  }
-
-  function onPress(quote) {
-    console.log(quote.id);
-  }
 
   console.log(quotes);
-  return (
-    <View>
-      {/* <FlatList
-        data={quotes}
-        renderItem={renderQuotes}
-        keyExtractor={quote => quote._id}
-      /> */}
-    </View>
-  );
+
+  return <View />;
 };
 
 export default QuoteList;
